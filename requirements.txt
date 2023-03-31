@@ -1,0 +1,7 @@
+scipy
+numpy
+matplotlib
+pandas
+PyWavelets
+streamlit
+bokeh==2.4.3
