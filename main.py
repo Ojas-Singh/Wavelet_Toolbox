@@ -171,7 +171,7 @@ def plot(uploaded_file,extra,step):
                mime='text/csv',)
      if step:
           y2= wave(y,'haar')
-          ho = st.text_input('H thresold', '2')
+          ho = st.text_input('H thresold', '2',key=200)
           # h=st.slider('H thresold :',0.0,50.0,0.0,key=0 )
           h=float(ho)
           if st.button('Plot Step-Fit',key=2):
@@ -202,14 +202,14 @@ def plot(uploaded_file,extra,step):
                label="Download data",
                data=DF.to_csv(header=None, index=None, sep=' ', mode='a'),
                file_name='step_fit.txt',
-               mime='text/csv',)
+               mime='text/csv',key=300)
                tablef= zip(table[0],table[1],table[2],table[3],table[4],table[5])
                DFt = pd.DataFrame(tablef,columns=['Step_id','strat_time_index','dwell_time','y_value','h diff','h_diff_mag'])
                st.download_button(
                label="Download step dwell data",
                data=DFt.to_csv(header=True,columns=['Step_id','strat_time_index','dwell_time','y_value','h diff','h_diff_mag'] ,index=None, sep=' ', mode='a'),
                file_name='dwell.txt',
-               mime='text/csv',)
+               mime='text/csv',key=400)
                
 
 
@@ -217,18 +217,18 @@ def plot(uploaded_file,extra,step):
 # st.set_page_config(layout="wide")
 st.title('Wavelet Toolbox')
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a file",key=500)
 
-agree = st.checkbox('Load Dummy Data')
+agree = st.checkbox('Load Dummy Data',key=1200)
 
 if uploaded_file is not None:
-     extra = st.checkbox('Filter?')
-     step=st.checkbox('Step-Fit?')
+     extra = st.checkbox('Filter?',key=600)
+     step=st.checkbox('Step-Fit?',key=700)
      plot(uploaded_file,extra,step)
 else:
      if agree:
-          extra = st.checkbox('Filter?')
-          step=st.checkbox('Step-Fit?')
+          extra = st.checkbox('Filter?',key=800)
+          step=st.checkbox('Step-Fit?',key=900)
           plot('raw.txt',extra,step)
      else:
           st.write("Please Upload a data file to continue!")
