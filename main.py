@@ -123,7 +123,7 @@ def wave(y,option):
 def con(levels):
      t=[]
      for i in range(levels):
-          a = st.checkbox('Include Level : '+str(i),key=i)
+          a = st.checkbox('Include Level : '+str(i),key=i*5000)
           # if a:
           b=st.slider('Multiplier : ', 0.0, 1.0, 1.0,key=i)
           t.append((a,b))
