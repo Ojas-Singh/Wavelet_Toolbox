@@ -154,7 +154,7 @@ def plot(uploaded_file,extra,step):
 
           t=con(levels)
           y1= filter(y,option,t)
-          if st.button('Plot filter',key=1):
+          if st.button('Plot filter',key=1000):
                
                psigplot = figure(
                title='Data',
@@ -174,7 +174,7 @@ def plot(uploaded_file,extra,step):
           ho = st.text_input('H thresold', '2',key=200)
           # h=st.slider('H thresold :',0.0,50.0,0.0,key=0 )
           h=float(ho)
-          if st.button('Plot Step-Fit',key=2):
+          if st.button('Plot Step-Fit',key=20000):
                x0=x
                lp=True
                y0=y2[:len(x)]
