@@ -125,7 +125,7 @@ def con(levels):
      for i in range(levels):
           a = st.checkbox('Include Level : '+str(i),key=i*5000+1)
           # if a:
-          b=st.slider('Multiplier : ', 0.0, 1.0, 1.0,key=i)
+          b=st.slider('Multiplier : ', 0.0, 1.0, 1.0,key=i*700000+23)
           t.append((a,b))
           # else:
           #      t.append((a,1.0))
