@@ -1,6 +1,6 @@
 scipy
 plotly
-numpy
+numpy==1.21.6 
 matplotlib
 pandas
 PyWavelets
